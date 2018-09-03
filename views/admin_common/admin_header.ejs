@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/assets/css/font.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.2.4/collection/icon/icon.css" rel="stylesheet" >
+
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="/assets/css/forum.css">
+    <link rel="stylesheet" href="/assets/css/header.css">
+    <title>UniMantra Network</title>
+    <link rel="stylesheet" href=".././assets/css/adminpanel.css">
+
+
+    <!-- css for specific page -->
+    <% cssFilePaths.forEach((path) => { %>
+        <link rel="stylesheet" href="<%= path %>">
+    <% }) %>
+
+</head>
+<body  onload="document.body.style.opacity='1'">
+
+
+
+
+<!-- top navbar -->
+<%- include("../common/nav") %>
+
+
+
+<!-- admin sidebar -->
+<div class="wrapper" id="wrapper">
+<div class="left-container" id="left-container">
+  <!-- begin SIDE NAV USER PANEL -->
+  <div class="left-sidebar" id="show-nav">
+    <ul id="side" class="side-nav">
+      <li class="panel">
+          <a id="dashboard"  > <i class="fa fa-chart-bar" aria-hidden="true"></i>  Dashboard
+         </a>
+
+      </li>
+      <li class="panel">
+        <a href="/admin/forumusers" id="forumusers"> <i class="fa fa-user" aria-hidden="true"></i>  Users</a>
+
+      </li>
+      <li class="panel">
+        <a id="blog" href="/admin/blog"> <i class="fab fa-blogger"></i>   Blog</a>
+          <!-- <span class="label label-danger">new event</span>  </a> -->
+
+      </li>
+      <li class="panel">
+        <a href="/admin/enquiry" id="enquiry"> <i class="fa fa-envelope" aria-hidden="true"></i>  Enquiry
+        </a>
+
+      </li>
+      <li class="panel">
+        <a id="createcategory" href="/admin/createcategory"> <i class="fa fa-list-alt" aria-hidden="true"></i>   Create Category
+
+        </a>
+
+      </li>
+      <li class="panel">
+        <a id="website" > <i class="fa fa-globe" aria-hidden="true"></i>  Website</a>
+          <!-- <span class="label label-primary">new msz</span>   -->
+
+      </li>
+
+    </ul>
+  </div>
+  <!-- END admin sidebar -->
+
+
+</div>
+  <div class="right-container" id="right-container">

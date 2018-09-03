@@ -1,0 +1,170 @@
+.hidden-div{
+	display: none;
+}
+.container{
+	padding: 0px;
+	font-size: 16px;
+}
+#thread_list{
+	 box-shadow: 0px 2px 5px -1px #000000;
+	/* border-top: 1px solid #d3d3d3;
+	border-left: 1px solid #d3d3d3;
+	border-right: 1px solid #d3d3d3; */
+
+	float: left;
+	width: 70%;
+}
+.threads_title{
+	  box-shadow: 0px 2px 5px -1px #000000;
+	padding: 10px;
+	background: #CC3232;
+	margin-bottom: 20px;
+	overflow: auto;
+
+
+}
+.threads_title h1{
+	
+	font-size: 22px;
+	margin: 0px;
+	color: white;
+}
+.threads_title p{
+	text-transform: capitalize;
+	font-size: 14px;
+	margin: 0px;
+	color: white;
+}
+
+.right{
+	overflow: auto;
+	float: right;
+	width: 30%;
+	padding: 5px;
+}
+.category-description{
+	overflow: auto;
+	padding: 10px;
+background: #fafafa;
+margin-bottom:20px;
+}
+.create-thread-btn{
+
+	margin: 0 auto;
+	font-size: 18px;
+	text-align: center;
+	text-decoration: none;
+	outline: none;
+	color:  #CC3232;
+	transition: .4s;
+}
+.create-thread-btn a{
+	text-decoration: none;
+}
+.create-thread-btn:hover{
+	transition: .4s;
+	text-decoration:none;
+	outline: none;
+	color: #333333;
+}
+
+.thread {
+	min-height: 50px;
+
+	border-bottom:1px solid #d3d3d3;
+	background: #fff;
+	overflow: auto;
+	display: flex;
+	justify-content: space-between;
+}
+
+.thread:hover {
+	background: #fafafa;
+}
+
+.thread .thread-section-1 {
+	display: inline-block;
+	border-right: 1px solid #d3d3d3;
+	width: 60%;
+	overflow: auto;
+	padding: 10px;
+}
+
+.thread .thread-section-1 .thread-title {
+	transition: .4s;
+	font-size: 18px;
+}
+.thread-title:hover{
+	color: #CC3232;
+	cursor: pointer;
+	transition: .4s;
+}
+.thread .dead-div {
+	padding: 10px;
+	overflow: auto;
+	width: 15%;
+	border-right: 1px solid #d3d3d3;
+	display: inline-block;
+}
+.thread .thread-section-1 .thread-auther {
+	font-size: 14px;
+	color: grey;
+}
+.thread-auther a{
+	color: #CC3232;
+}
+.thread-auther a:hover{
+	color: #333333;
+	text-decoration: none;
+}
+.thread .thread-section-2 {
+	padding: 10px;
+overflow: auto;
+	width: 25%;
+	font-size: 14px;
+	display: inline-block;
+	color: gray;
+}
+
+.thread-section-2 p{
+	margin: 0 auto;
+	padding: 0 auto;
+	color: #a8a8a8;
+}
+
+.pagination {
+    display: inline-block;
+}
+
+.pagination a {
+    color: #333333;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+}
+
+.pagination a.active {
+    background-color: #f44336;
+    color: white;
+}
+
+.pagination a:hover:not(.active) {
+	background-color: #757575;
+}
+
+@media (max-width: 574px){
+	.thread .thread-section-1 {
+		display: block;
+		/*background: red;*/
+	}
+	.thread .dead-div {
+		/*width: auto;*/
+		display: none;
+	}
+	.thread .thread-section-2 {
+		display: block;
+		color: grey;
+}
+
+}

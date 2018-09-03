@@ -1,0 +1,68 @@
+<%- include('admin_common/admin_header',{ cssFilePaths:["/assets/css/admincreatecategory.css"] }) %>
+
+
+    <div class="container">
+            <div class="categories-module">
+                <div class="edit-bar">
+                    <div class="edit-bar-text">All Categories</div>
+                    <div class="edit-bar-buttons">
+                        <button class="btn btn-xs btn-primary normal-mode" id="edit_mode_toggle_button">Edit</button>
+                        <button class="btn btn-xs btn-primary edit-mode" id="delete_button">Delete</button>
+                        <button class="btn btn-xs edit-mode" id="cancel_button">Cancel</button>
+                    </div>
+                </div>
+                    <div class="categories-wrapper"></div>
+                
+            </div>
+        <center>
+        	<div class="form-group">
+        		<label for="">Parent Category</label><br>
+        		<select id="categorypicker" class="selectpicker show-tick" title="Choose one of the following..." >
+            </select>
+        	</div>
+        	<div class="form-group">
+        		<label for="">Category Name</label>
+        		<input id="categoryname" type="text" class="form-control">
+        	</div>
+          <div class="form-group">
+        		<label for="">Category Description</label>
+        		<textarea id="description" type="text" class="form-control"></textarea>
+        	</div>
+        	<button id="create_category_button" class="btn btn-primary">Create Category</button>
+        </center>
+    </div>
+</div>
+<script id="category_template" type="text/html">
+
+	<div class="category-template">
+		<div class="parent-category">
+			{{parentCategoryName}}
+		</div>
+		<div class="chlid-category-wrapper">
+			<ul>
+				{{#childs}}<li><a href="/threadlist/{{_id}}">{{categoryname}}</a></li>{{/childs}}
+			</ul>
+		</div>
+	</div>
+
+</script>
+
+<script id="category_edit_mode_template" type="text/html">
+
+  <div class="category-template">
+    <div class="parent-category">
+      <input class="category-checkbox" type="checkbox" id="{{parentCategoryId}}">
+      {{parentCategoryName}}
+    </div>
+    <div class="chlid-category-wrapper">
+      <ul>
+        {{#childs}}
+          <li><input class="sub-category-checkbox" type="checkbox" id="{{_id}}" parent="{{parentCategoryId}}">{{categoryname}}</li>
+        {{/childs}}
+      </ul>
+    </div>
+  </div>
+
+</script>
+
+<%- include('admin_common/admin_footer', { jsFilePaths: ["/assets/js/admincreatecategory.js"] }) %>

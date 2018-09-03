@@ -1,0 +1,107 @@
+<%- include('common/forum_header') %>
+<link rel="stylesheet" href=".././assets/css/createthread.css">
+</head>
+<header>
+</header>
+<body onload="document.body.style.opacity='1'">
+<%- include('common/nav') %>
+<div class="rules">
+  <div class="container">
+    <center><h1> Rules </h1> </center>
+    <ul>
+      <li>
+        <h2>The official language of these forums is English.</h2>
+        <p> So that the site moderators can read, understand and approve every post as being appropriate, we ask that you make posts only in English.</p>
+      </li>
+      <li>
+        <h2>Stay on topic</h2>
+        <p>Every forum has a description. Before you post, please read the descriptions carefully and try to create topics in the section that most closely matches what your post is about.
+              Replies to topics should have something to do with the conversation occurring in that thread. If you want to change the topic entirely, by all means, make a new topic in the appropriate forum. Making sure that you post in the correct areas will make it much easier for everyone to find the subjects and conversations they are looking for.</p>
+      </li>
+      <li>
+        <h2>Title your posts appropriately</h2>
+        <p>When you start a topic, try to give it a title that will give people some idea of what’s inside. For example, titling a post in the advice forum “Advice” doesn’t really help anyone, because ALL the topics in the advice forum are going to be advice. A better title might be “How to hold your pencil for maximum control over gradients”</p>
+      </li>
+      <li>
+        <h2>Respect other members and admins</h2>
+        <p>Abusive language and profanity will not be tolerated. No personal attacks. No messages intended solely to upset people, spread false rumors or otherwise drag down the atmosphere of the community.
+          Although we obviously allow for posting drawings and links to your drawings of nude sketches, we would prefer that you not post or link to images or drawings of people engaged in sexual or extremely violent acts. Please refrain from posting links to inappropriate material. These forums are used by people of all ages.
+          Usernames and account display names must not contain vulgar language, slurs or degrading language. If your display name is found to violate this standard or to be questionable, your display name will be set to something generic such as “Forum Participant”
+          If you want to start an in-depth discussion of (real world) politics and religion, or anything else likely to instantaneously start flame wars, you should probably find a site dedicated to discussing politics and religion instead. The topic of this site is improving in artistic skills.</p>
+      </li>
+      <li>
+        <h2>Don’t spam</h2>
+        <p>“Spam” is defined as any pointless, disruptive, annoying message. That could be posting Shakespeare quotes a thousand times so no one else can get a word in edgewise, and it might mean posting a single message of jumbled letters. It can also refer to posts made solely to advertise.</p>
+      </li>
+    </ul>
+    <center><h4>Violating our rating guidelines can get you suspended or deleted</h4></center>
+    <center>
+      <div class="form-check" style="margin-top:30px; ">
+					<label>
+						<input type="checkbox" name="check" id="rulesread"> <span class="label-text" style="color: #fff; font-weight:normal;">I have read the rules and will follow them before creating thread.</span>
+					</label>
+				</div>
+    </center>
+  </div>
+</div>
+<section id="category-section">
+    <div class="container">
+      <center>
+      <div class="form-group">
+    		<label for="">Choose category under which thread will be created </label><br>
+    		<select id="categorypicker" class="selectpicker show-tick" title="Choose one of the following..." >
+        </select>
+    	</div>
+      
+      <div id="subcategory_wrapper" class="form-group">
+        <label for="">Choose subcategory</label><br>
+        <select id="subcategorypicker" class="selectpicker show-tick" title="Choose one of the following..." >
+        </select>
+      </div>
+
+      <div class="form-group">
+    		<label for="" style="color:#a9a9a9;"><i class="fa fa-location-arrow" aria-hidden="true"></i>&nbsp; &nbsp; Location of thread:</label><br>
+    		<p id="path"></p>
+    	</div>
+    </center>
+    <div class="hidden-div">
+    	<div class="form-group ">
+    		<label for="">Title</label>
+    		<input id="thread_title_input" type="text" class="form-control" placeholder="Type in the thread heading">
+    	</div>
+    	<div class="form-group ">
+    		<label for="">Body</label>
+    		<textarea id="thread_body_input" type="text" class="form-control" placeholder="Type the details here"></textarea>
+    	</div>
+      <div class="form-group ">
+    		<label for="">Tags</label>
+    		<input id="thread_tags_input" type="text" class="form-control" placeholder="Atleast one tag and max 5 tags">
+    	</div>
+    	<center><input type="button" id="create_thread_button" class="create-thread-btn " value="Create Thread"></center>
+    </div>
+  </div>
+
+</section>
+
+<script type="text/javascript" src="/assets/js/nicEdit.js"></script>
+<script type="text/javascript">
+    let nicObejct;
+    let textarea;
+    bkLib.onDomLoaded(function() {
+        // nicEditors.allTextAreas()
+        // textarea = nicEditors.findEditor('thread_body_input');
+
+        nicObejct = new nicEditor({
+          buttonList: ['bold','italic','underline','left','center','right','justify','ol','ul','subscript','superscript','strikethrough','removeformat','indent','outdent','hr','upload','forecolor','bgcolor','fontSize','fontFamily','fontFormat'],
+          maxHeight : 350
+        });
+        nicObejct.panelInstance('thread_body_input');
+        textarea = nicObejct.instanceById("thread_body_input");
+        
+    });
+</script>
+
+
+<%- include('common/forum_js_includes') %>
+    <script type="text/javascript" src=".././assets/js/createthread.js"></script>
+<%- include('common/forum_footer') %>

@@ -1,0 +1,202 @@
+<style>
+
+    #wpsm_testi_b_row_762 .wpsm_testi_title{
+        font-size:15px !important;
+        color:#1e73be !important;
+        font-family: "Poppins", sans-serif;
+        margin-top: 12px !important;
+        margin-bottom: 8px !important;
+        padding:0px !important;
+    }
+    #wpsm_testi_b_row_762 .wpsm_testi_title > small{
+        font-size:16px !important;
+        color:#424242 !important;
+        font-family:'Arial';
+    }
+    #wpsm_testi_b_row_762 .wpsm_testi_links{
+        font-size:15px !important;
+        color:#1e73be !important;
+        font-family:'Arial';
+    }
+    #wpsm_testi_b_row_762 .wpsm_testi_description{
+        font-size:19px !important;
+        color:#595959 !important;
+        font-family:'Arial';
+        font-weight: 400;
+    }
+    #wpsm_testi_b_row_762 .wpsm_testi_pic > img{
+                border-radius: 50% !important;
+        }
+
+    .wpsm_testimonial_2 {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .wpsm_row {
+        overflow: hidden;
+        display: block;
+        width: 100%;
+    }
+
+    .wpsm_testi_b_row {
+        overflow: hidden;
+        display: block;
+        width: 100%;
+        border: 0px solid #ddd;
+        margin-bottom: 30px;
+    }
+
+    footer .copy-right-text a{
+        color: white;
+
+    }
+
+.inner-container{
+    padding-left: 16px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    overflow: auto;
+}
+.inner-container li{
+    padding-left: 21px;
+}
+
+.inner-container .ans-text{
+    padding-left: 21px;
+}
+.recent-result-container{
+    padding-left: 20px;
+}
+
+.sample-text-area{
+    margin: 0px;
+    padding-top: 30px;
+    padding-bottom: 0px;
+}
+
+#submitbutton{
+     margin-top: 20px;
+    background: white;
+    color: #f45c43;
+    border: 1px solid red;
+
+}
+
+#submitbutton:hover{
+    color: white;
+   margin-top: 20px;
+   background-image: -webkit-linear-gradient(0deg, #eb3349 0%, #f45c43 100%);
+}
+
+
+
+
+/* Tab layout Css*/
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  padding: 50px 0;
+  font-weight: 400;
+  text-align: center;
+}
+
+
+main {
+  min-width: 320px;
+  max-width: 1000px;
+  padding: 50px;
+  margin: 0 auto;
+  background: #fff;
+}
+
+
+input {
+  display: none;
+}
+
+label {
+  display: inline-block;
+  margin: 0 0 -1px;
+  padding: 15px 25px;
+  font-weight: 600;
+  text-align: center;
+  color: #bbb;
+  border: 1px solid transparent;
+}
+
+label:before {
+  font-family: FontAwesome;
+  font-weight: normal;
+  margin-right: 10px;
+}
+
+label[for*='1']:before { content: '\f1cb'; 1}
+label[for*='2']:before { content: '\f17d'; }
+label[for*='3']:before { content: '\f16b'; }
+label[for*='4']:before { content: '\f1a9'; }
+
+label:hover {
+  color: #888;
+  cursor: pointer;
+}
+
+input:checked + label {
+  color: #555;
+  border: 1px solid #ddd;
+  border-top: 2px solid orange;
+  border-bottom: 1px solid #fff;
+}
+
+#tab1 ~ #content1,
+#tab2 ~ #content2,
+#tab3 ~ #content3
+{
+
+  display: none;
+}
+
+#tab1:checked ~ #content1,
+#tab2:checked ~ #content2,
+#tab3:checked ~ #content3
+{
+    padding: 20px;
+  display: block;
+}
+
+
+
+@media screen and (max-width: 650px) {
+  label {
+    font-size: 0;
+  }
+  label:before {
+    margin: 0;
+    font-size: 18px;
+  }
+  main{
+    padding: 0px;
+  }
+  .aboutus-container{
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  label {
+    padding: 15px;
+  }
+}
+
+
+
+</style>

@@ -1,0 +1,34 @@
+body{
+
+background-color: #fafafa;
+
+}
+input, textarea{
+	text-align: center;
+
+}
+
+
+*:focus {
+  outline: none !important;
+  border-color: #CC3232;
+  box-shadow: 0 0 10px #CC3232;
+}
+
+.container{
+	width: 100%;
+  padding: 50px;
+	margin: 0px;
+
+}
+
+.parent-category {
+	color: #cc3232;
+	font-weight: bolder;
+	font-size: 15px;
+}
+
+#body{
+  height: 350px;
+  /*text-align: left;*/
+}

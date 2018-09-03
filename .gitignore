@@ -1,0 +1,5 @@
+node_modules/
+npm-debug.log
+server/public/uploads/*
+!server/public/uploads/default_blog_featured_image.png
+!server/public/uploads/avatar.png

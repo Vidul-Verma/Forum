@@ -1,0 +1,53 @@
+.message-list {
+	border-top: 1px solid #e4e4e4;
+	margin: 10px 0;
+}
+
+.message-element {
+	/*display: flex;*/
+	border: 1px solid #e4e4e4;
+	border-top: none;
+}
+
+.message-element > div {
+	/*display: inline-block;*/
+	padding: 10px;
+}
+
+.message-element .name-email-dt-div {
+	/*width: 300px;*/
+	background: #f9f9f9;
+	/*border-right: 1px solid #f5f5f5;*/
+}
+
+.message-element .name-email-dt-div div {
+	display: inline-block;
+}
+
+.message-element .name-email-dt-div .name {
+	font-size: 15px;
+	font-weight: bolder;
+}
+
+.message-element .name-email-dt-div .email  {
+	color: #a8a8a8;
+}
+
+.message-element .name-email-dt-div .datetime {
+	color: #a8a8a8;
+}
+
+.message-element .name-email-dt-div .buttons {
+	color: #CC3232;
+	float: right;
+}
+.buttons button{
+	padding: 0px;
+	margin: 0px;
+}
+
+.message-element .message {
+	margin-right: auto;
+	/*border-right: 1px solid #f5f5f5;*/
+	/*width: 100%;*/
+}

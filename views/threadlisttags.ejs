@@ -1,0 +1,71 @@
+<%- include('common/forum_header') %>
+<link rel="stylesheet" href=".././assets/css/threadlisttags.css">
+</head>
+<header>
+</header>
+<body onload="document.body.style.opacity='1'">
+    <%- include('common/nav') %>
+<section>
+    <div class="container">
+
+        <div class="threads_title" id="title">
+
+        </div>
+        <div id="thread_list">
+
+        </div>
+        <div class="right">
+          <!-- <div class="category-description" id="category_description">
+            Before you can begin to determine what the composition of a particular paragraph will be.
+          </div> -->
+          <center><a href="/createthread" class="create-thread-btn" id="create_thread_button" style="display: none;">	<i class="fas fa-plus"></i> Ask Question</a></center>
+      </div>
+
+</section>
+<center>
+  <div class="pagination">
+      <a >&laquo;</a>
+      <a >1</a>
+      <a class="active">2</a>
+      <a >3</a>
+      <a >4</a>
+      <a >5</a>
+      <a >6</a>
+      <a >&raquo;</a>
+  </div>
+</center>
+
+<%- include('common/forum_js_includes') %>
+<script type="text/javascript" src=".././assets/js/threadlisttags.js"></script>
+<script type="text/template" id="thread_list_element">
+    <div class="thread" >
+        <div class="thread-section-1">
+            <div class="thread-title" onclick="goToThread('{{threadId}}')">
+                {{title}}
+            </div>
+            <div class="thread-auther">
+                Thread by <a href="/user/{{createdBy}}">{{createdBy}}</a> on: {{createdAt}}
+            </div>
+        </div>
+        <div class="dead-div">
+
+
+        </div>
+        <div class="thread-section-2">
+            <div class="thread-lastreply-datetime">
+                <p>Last Reply:</p> {{lastReplyAt}}
+            </div>
+            <div class="thread-reply-count">
+                <p>Replies:</p> {{replyCount}}
+            </div>
+        </div>
+    </div>
+</script>
+<script>
+    let loggedIn = <%= loggedIn %>;
+    if(loggedIn){
+        $("#create_thread_button").show();
+    }
+</script>
+
+<%- include('common/forum_footer') %>

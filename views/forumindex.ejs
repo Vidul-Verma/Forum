@@ -1,0 +1,115 @@
+<%- include('common/forum_header') %>
+<link rel="stylesheet" href=".././assets/css/forumindex.css">
+</head>
+<header>
+</header>
+<body onload="document.body.style.opacity='1'">
+  <%- include('common/nav') %>
+<div class="container-fluid">
+
+  <div class="row" id="content_wrapper">
+    <div class=" col-sm-8 col-xs-12" id="categories">
+      <div class="recent-activities-heading">
+          <h1> Recent Activites</h1>
+      </div>
+      <div class="recent-activities">
+
+          <div class="recent-activities-list">
+          </div>
+          <center>
+            <div class="recent-show-more">
+              <a href='/sortedthreads' class="show-more-button" >Show More</a>
+            </div>
+        </center>
+      </div>
+
+
+    </div>
+
+    <div class=" col-sm-4 col-xs-12">
+      <div class="card right-card" id="recent_replies_wrapper">
+        <div class="text-center heading-small"><h3>Recent Replies</h3></div>
+      </div>
+      <div class="card right-card" id="most_upvoted_wrapper">
+        <div class="text-center heading-small"><h3>Most Upvoted</h3></div>
+      </div>
+      <div class="card right-card" id="new_threads_wrapper">
+        <div class="text-center heading-small"><h3>New Threads</h3></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+<%- include('common/forum_js_includes') %>
+<script type="text/javascript" src=".././assets/js/forumindex.js"></script>
+<script id="make-cards" type="text/template">
+  <div class="card left-card" id="{{categoryId}}">
+    <div class="text-center heading" ><h1>{{categoryname}}</h1></div>
+  </div>
+</script>
+<script id="fill-threads" type="text/template">
+  <div class="row-threads">
+  <div class="row-left pull-left">
+    <h2 class="thread-title" id= {{categoryId}}><a href = '/threadlist/{{categoryId}}'>{{categoryName}} </a></h2>
+    <p class="thread-creator">{{categoryDescription}} </p>
+  </div>
+  <div class="row-mid pull-left">
+    <h2 class="thread-replies">Replies : {{replies}}</h2>
+    <p class="thread-last-reply">Threads: {{threads}} </p>
+  </div>
+  <div class="row-right pull-left">
+    <h2 class="thread-replies">Thread : Latest thread</h2>
+    <p class="thread-last-reply">Last Reply: {{replyAt}} </p>
+  </div>
+  </div>
+</script>
+
+<script id="threadlist-element-template" type="text/template">
+  <div class="recent-individual-item">
+    <div class="recent-left-div">
+      <div class="recent-left-one">
+        <h1>{{views}}</h1>
+        <p> views</p>
+      </div>
+      <div class="recent-left-two">
+        <h1>{{replyCount}}</h1>
+        <p> replies</p>
+      </div>
+      <div class="recent-left-three">
+        <h1>{{upvoteCount}}</h1>
+        <p> votes</p>
+      </div>
+    </div>
+    <div class="recent-right-div">
+      <a href="/thread/{{compositeId}}" class="recent-thread-title">{{threadTitle}}</a>
+      <div class="recent-tags">
+        <a href="/threadlisttags/{{tags}}?pagethread=1">#{{tags}}</a>
+      </div>
+      <div class="recent-meta-data">created by: <a href="/profile?username={{creatorUsername}}" class="username">{{creatorUsername}}</a> and last activity: {{lastActivityAt}}</div>
+    </div>
+  </div>
+</script>
+
+<script id="thead_sm_element_template" type="text/html">
+
+  <div class="thread-sm-element">
+    <div >
+      <a class="thread-sm-title" href="/thread/{{compositeId}}">{{threadTitle}}</a>
+    </div>
+    <div class="thread-sm-stats">
+       <span>{{views}}</span> Views
+       <span>{{replyCount}}</span> Replies
+       <span>{{upvoteCount}}</span> Votes
+    </div>
+    <div class="thread-sm-meta-data">
+      created by: <a href="/profile?username={{creatorUsername}}" class="username">{{creatorUsername}}</a> <br>last activity: {{lastReplyAt}}
+    </div>
+  </div>
+
+</script>
+
+
+<%- include('common/forum_footer') %>

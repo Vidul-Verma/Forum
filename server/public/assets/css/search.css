@@ -1,0 +1,90 @@
+.container{
+	min-height: 100vh;
+}
+
+.threads-wrapper{
+	background: #f8f8f8;
+}
+.thread-element {
+	border-bottom: solid 1px #d3d3d3;
+	overflow: auto;
+	padding: 10px;
+	margin: 10px 0;
+}
+
+.thread-element .title {
+	font-size: 20px;
+	color: #cc3232;
+	transition: .4s;
+}
+.thread-element .title:hover {
+	font-size: 24px;
+	color: #333333;
+	text-decoration: none;
+	transition: .4s;
+}
+.thread-element .body {
+	color: #676767;
+}
+.thread-element .stats {
+	float: right;
+	color: #a8a8a8;
+}
+.thread-element .tags {
+	color: #cf5f5f;
+}
+a{
+	text-decoration: none;
+	outline: none;
+	border: 0px;
+	transition: .4s;
+}
+a:hover{
+	transition: .4s;
+	text-decoration: none;
+	outline: none;
+	border: 0px;
+}
+.meta a:hover{
+	transition: .4s;
+	color: #333333;
+}
+.tags a{
+	color: #cf5f5f !important;
+	transition: .4s;
+}
+.tags a:hover{
+	color: #CC3232!important;
+	text-decoration: none;
+	transition: .4s;
+}
+
+.thread-element .meta {
+	color: #a8a8a8;
+}
+
+
+/*pagination*/
+
+.pagination {
+    display: inline-block;
+}
+
+.pagination a {
+    color: #333333;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+}
+
+.pagination a.active {
+    background-color: #f44336;
+    color: white;
+}
+
+.pagination a:hover:not(.active) {
+	background-color: #757575;
+}
+
+/*end of pagination*/

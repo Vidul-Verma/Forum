@@ -1,0 +1,87 @@
+<%- include('common/forum_header') %>
+<link rel="stylesheet" href=".././assets/css/sortedthreads.css">
+</head>
+<header>
+</header>
+<body onload="document.body.style.opacity='1'">
+  <%- include('common/nav') %>
+<ul class="nav-tabs">
+    <li id="recent_activites_tab" class="active"><a href="#">Recent Activites</a></li>
+    <li id="recent_replies_tab"><a href="#">Recent Replies</a></li>
+    <li id="most_upvoted_tab"><a href="#">Most Upvoted</a></li>
+    <li id="newly_created_tab"><a href="#">Newly Created</a></li>
+</ul>
+
+<div class="contain">
+    <div class="thread-wrapper">
+    </div>
+</div>
+
+
+
+<%- include('common/forum_js_includes') %>
+<script type="text/javascript" src=".././assets/js/sortedthreads.js"></script>
+<!-- <script type="text/template" id="thread_list_element">
+
+
+    <div class="recent-individual-item">
+    <div class="recent-left-div">
+      <div class="recent-left-one">
+        <h1>{{views}}</h1>
+        <p> Views</p>
+      </div>
+      <div class="recent-left-two">
+        <h1>{{replies}}</h1>
+        <p> Replies</p>
+      </div>
+      <div class="recent-left-three">
+        <h1>{{votes}}</h1>
+        <p> Votes</p>
+      </div>
+    </div>
+    <div class="recent-right-div">
+      <a href="/thread/{{threadId}}?page=1" class="thread-title">{{threadTitle}} </a><br>
+<p class="thread-tags">
+  {{#tags}}
+      <a href = "/threadlisttags/{{.}}?pagethread=1">#{{.}}</a>
+  {{/tags}}
+</p>
+<p class="thread-info">Created by: {{username}} and last activity at: {{time}}</p>
+    </div>
+  </div>
+
+
+
+</script> -->
+
+
+<script id="threadlist_element_template" type="text/template">
+  <div class="recent-individual-item">
+    <div class="recent-left-div">
+      <div class="recent-left-one">
+        <h1>{{views}}</h1>
+        <p> views</p>
+      </div>
+      <div class="recent-left-two">
+        <h1>{{replyCount}}</h1>
+        <p> replies</p>
+      </div>
+      <div class="recent-left-three">
+        <h1>{{upvoteCount}}</h1>
+        <p> votes</p>
+      </div>
+    </div>
+    <div class="recent-right-div">
+      <a href="/thread/{{compositeId}}" class="recent-thread-title">{{threadTitle}}</a>
+      <div class="recent-tags">
+        {{#tags}}
+          <a href="/threadlisttags/{{.}}?pagethread=1">#{{.}}</a>
+        {{/tags}}
+      </div>
+      <div class="recent-meta-data">created by: <a href="#" class="username">{{creatorUsername}}</a> and last activity on: {{lastActivityAt}}</div>
+    </div>
+  </div>
+</script>
+
+
+<%- include('common/forum_footer') %>

@@ -1,0 +1,217 @@
+<%- include('common/forum_header') %>
+<link rel="stylesheet" href=".././assets/css/threadview.css">
+</head>
+<header>
+</header>
+<body onload="document.body.style.opacity='1'">
+    <%- include('common/nav') %>
+<section>
+  <div class="container-fluid">
+
+    <div class="row">
+
+      <div class="col-lg-9 col-md-8 sm-padding-zero">
+        <div class="thread-reply-wrapper">
+          <div class="thread-wrapper"></div>
+          <div class="thread-createreply-wrapper">
+            <textarea id="create_reply_textarea" placeholder="Type your reply here..."></textarea>
+            <button class="un-btn" id="create_reply_button">Reply</button>
+          </div>
+          <div class="replies-wrapper"></div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-4 left-padding-zero sm-padding-zero">
+        <div class="content-right">
+
+          <div class="card right-card" id="recent_replies_wrapper">
+            <div class="text-center heading-small"><h3>Recent Activity</h3></div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<center>
+  <div class="pagination">
+<!--       <a >&laquo;</a>
+      <a >1</a>
+      <a class="active">2</a>
+      <a >3</a>
+      <a >4</a>
+      <a >5</a>
+      <a >6</a>
+      <a >&raquo;</a> -->
+  </div>
+</center>
+
+<script id="thread_template" type="text/template">
+<div class="thread">
+    <div class="thread-avatar ">
+
+      <img class="card-img-bottom" src="{{avatar}}" alt="Card image" style="width:50px;">
+      <br>
+      <a href="/profile?username={{creatorUsername}}" style="width:50px;">{{creatorUsername}}</a>
+    </div>
+    <div class="thread-right ">
+      <div class="thread-title">{{title}}</div>
+      <div class="thread-body">{{{body}}}</div>
+      <div class="username-datetime-wrapper">
+        <div class="creater-username-div"></div>
+        <div class="thread-datetime"> Created at: {{createdAt}}  </div>
+      </div>
+      <div class="thread-tags">
+        <p>
+          {{#tags}}
+              <a href = "/threadlisttags/{{.}}?pagethread=1">#{{.}}</a>
+          {{/tags}}
+        </p>
+      </div>
+      <br>
+      <br>
+    </div>
+
+</div>
+<div class="replies-heading" id="{{threadId}}">
+  <h1><span id="reply_count">{{posts}}</span> Replies </h1>
+  <h1><span id="upvote_count">{{upvoteCount}}</span> Upvotes </h1>
+  <h1><span id="view_count">{{views}}</span> Views </h1>
+  <div class="whitespace"></div>
+  <button class="un-btn hidden" id="reply_button">Add Reply</button>
+  <button id="upvote_button" class="un-btn hidden"><i class="fas fa-thumbs-up"></i></button>
+  <button id="downvote_button" class="un-btn un-btn-red hidden"><i class="fas fa-thumbs-up"></i></button>
+  <button id="bookmark_button" class="un-btn hidden"><i class="fa fa-star" aria-hidden="true"></i></button>
+  <button id="red_bookmark_button" class="un-btn un-btn-red hidden"><i class="fa fa-star" aria-hidden="true"></i></button>
+  <button id="delete_button" class="un-btn hidden"><i class="fa fa-trash" aria-hidden="true"></i></button>
+  <button id="close_button" class="un-btn hidden"><i class="fa fa-times" aria-hidden='true'></i></i></button>
+  <button id="open_button" class="un-btn hidden"><i class="fa fa-folder-open" aria-hidden='true'></i></i></i></button>
+</div>
+<div class="closed-msg-div" id="closed-msg-div">
+  <center><h1> This thread is closed</h1></center>
+</div>
+
+
+</script>
+
+
+
+
+
+<script id="reply_template" type="text/template">
+<div class="reply-comment-wrapper" id="{{replyId}}">
+  <div class="reply-number">#{{replyNumber}}</div>
+  <div class="reply">
+    <div class="reply-body">{{{body}}}</div>
+    <div class="username-datetime-wrapper">
+      <div class="reply-whitespace"></div>
+      <div class="reply-detail">
+        {{#creatorType}}
+          <p>Replied by <span class="user-type">{{creatorType}}</span></p>
+        {{/creatorType}}
+        <h1><a href="/profile?username={{creatorUsername}}"><img class="card-img-bottom" src="{{avatar}}" alt="Card image" style="width:20px;">  {{creatorUsername}}</a></h1>
+        <p>at: {{createdAt}}</p>
+
+      </div>
+
+      <!-- <div class="reply-datetime">{{createdAt}}</div>
+      <div class="reply-username">{{creatorUsername}}</div> -->
+    </div>
+  </div>
+  <div class="upvote-downvote-wrapper"><span class="reply_upvote_count">{{votes}}</span>
+    <button replyid="{{replyId}}" class="upvote-reply-button un-btn-small hidden"><i class="fas fa-thumbs-up"></i></button>
+    <button replyid="{{replyId}}" class="downvote-reply-button un-btn-small un-btn-red hidden"><i class="fas fa-thumbs-up"></i></button>
+    <button replyid="{{replyId}}" class="reply-bookmark-button un-btn-small hidden"><i class="fa fa-star" aria-hidden="true"></i></button>
+    <button replyid="{{replyId}}" class="reply-red-bookmark-button un-btn-small un-btn-red hidden"><i class="fa fa-star" aria-hidden="true"></i></button>
+  </div>
+  <div class="comments-wrapper">
+  </div>
+  <button class="un-btn comment_button" replyid="{{replyId}}">Add comment</button>
+  <button class="un-btn delete_reply_button hidden" replyid="{{replyId}}" ><i class="fa fa-trash" aria-hidden="true"></i></button>
+
+  <br><br>
+</div>
+</script>
+
+<script id="reply_deleted_template" type="text/template">
+<div class="reply-comment-wrapper" id="{{replyId}}">
+  <div class="reply-number">#{{replyNumber}}</div>
+  <div class="reply">
+    <div class="reply-body" style="color:#D3D3D3;">{{body}}</div>
+    <div class="username-datetime-wrapper">
+      <div class="reply-whitespace"></div>
+      <div class="reply-detail">
+      </div>
+
+    </div>
+  </div>
+  <div class="upvote-downvote-wrapper"></span>
+  </div>
+  <div class="comments-wrapper">
+  </div>
+  <button class="un-btn comment_button" replyid="{{replyId}}">Add comment</button>
+
+
+  <br><br>
+</div>
+</script>
+
+<script type="text/html" id="comment_template">
+    <div class="comment" id="{{commentId}}">
+
+      <div class="comment-body">{{body}}  &nbsp &nbsp- <a href="/profile?username={{creatorUsername}}">{{creatorUsername}}</a><span class="comment-datetime"> on: {{createdAt}}</span></div>
+      <button class="un-btn delete_comment_button hidden"><i class="fa fa-trash" aria-hidden="true"></i></button>
+
+    </div>
+</script>
+
+<script type="text/template" id="create_comment_template">
+  <div class="create-comment">
+    <textarea placeholder="Type your comment here"></textarea>
+    <div class="btn-wrapper">
+      <button class="un-btn commentButton" ><i class="fas fa-plus"></i></button>
+    </div>
+  </div>
+</script>
+
+<script id="thead_sm_element_template" type="text/html">
+
+  <div class="thread-sm-element">
+    <div >
+      <a class="thread-sm-title" href="/thread/{{compositeId}}">{{threadTitle}}</a>
+    </div>
+    <div class="thread-sm-stats">
+       <span>{{views}}</span> Views
+       <span>{{replyCount}}</span> Replies
+       <span>{{upvoteCount}}</span> Votes
+    </div>
+    <div class="thread-sm-meta-data">
+      created by: <a href="/profile?username={{creatorUsername}}" class="username">{{creatorUsername}}</a> <br>last activity on: {{lastReplyAt}}
+    </div>
+  </div>
+
+</script>
+
+<script type="text/html" id="category_template">
+<div class="card right-card" id="categories_wrapper">
+  <div class="text-center heading-small"><h3>Other Categories in {{parentCategoryName}}</h3></div>
+
+    {{#subCategories}}
+      <div id="{{_id}}" class="category-element"><a href="/threadlist/{{_id}}">{{categoryname}}</a></div>
+    {{/subCategories}}
+</div>
+</script>
+
+
+<%- include('common/forum_js_includes') %>
+
+<script>
+    let loggedIn = <%= loggedIn %>;
+</script>
+<script type="text/javascript" src="/assets/js/nicEdit.js"></script>
+<script type="text/javascript" src="/assets/js/threadview.js"></script>
+
+<%- include('common/forum_footer') %>
