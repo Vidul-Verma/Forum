@@ -80,33 +80,33 @@ Create category admin
 ![Alt text](/Screenshot%20(4).png)
 
 Create Category admin
-![Alt text](/master/Screenshot%20(5).png)
+![Alt text](/Screenshot%20(5).png)
 
 
 CHAT
-![Alt text](/master/Screenshot%20(9).png)
+![Alt text](/Screenshot%20(9).png)
 
-![Alt text](/master/Screenshot%20(10).png)
+![Alt text](/Screenshot%20(10).png)
 
 
 Read rules and create thread
-![Alt text](/master/Screenshot%20(7).png)
+![Alt text](/Screenshot%20(7).png)
 
 Categories and tags list
-![Alt text](/master/Screenshot%20(11).png)
+![Alt text](/Screenshot%20(11).png)
 
 Profile Evaluation
-![Alt text](/master/Screenshot%20(12).png)
+![Alt text](/Screenshot%20(12).png)
 
 Company details
-![Alt text](/master/Screenshot%20(13).png)
+![Alt text](/Screenshot%20(13).png)
 
 Create Blog
-![Alt text](/master/Screenshot%20(14).png)
-![Alt text](/master/Screenshot%20(16).png)
+![Alt text](/Screenshot%20(14).png)
+![Alt text](/Screenshot%20(16).png)
 
 Admin check user-name and change user-type
-![Alt text](/master/Screenshot%20(16).png)
+![Alt text](/Screenshot%20(16).png)
 
 Search forum
-![Alt text](/master/Screenshot%20(18).png)
+![Alt text](/Screenshot%20(18).png)
