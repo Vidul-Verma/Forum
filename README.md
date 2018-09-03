@@ -43,6 +43,7 @@ Admin Features:
 
 Development :
 Tech used: Node.js, MongoDB, HTML, CSS, jQuery, RESTful API (easily extendable to mobile apps).
+
 Notes( Development):
 •	Node.js framework used is express for routing and MVC architecture.
 
@@ -61,4 +62,6 @@ Notes( Development):
 •	Designed from scratch using HTML, CSS.
 
 •	Linux deployment with Nginx, MongoDB, Node.js with SSL certificate.
+
+
 
