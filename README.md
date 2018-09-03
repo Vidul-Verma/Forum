@@ -1,5 +1,5 @@
 # Forum
-Unimantra Network:
+Uni Mantra Network:
 This is a forum created for threaded asynchronous discussion purpose regarding career guidance etc for Uni Mantra which is consultancy service provider.
 Public Features:
 •	Create threads asking your questions and for having general discussions.
