@@ -106,7 +106,7 @@ Create Blog
 ![Alt text](/Screenshot%20(16).png)
 
 Admin check user-name and change user-type
-![Alt text](/Screenshot%20(16).png)
+![Alt text](/Screenshot%20(15).png)
 
 Search forum
 ![Alt text](/Screenshot%20(18).png)
