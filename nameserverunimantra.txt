@@ -1,6 +1,0 @@
-ns1.cp-in-15.bigrockservers.com
-ns2.cp-in-15.bigrockservers.com
-
-ns1.digitalocean.com
-ns2.digitalocean.com
-ns3.digitalocean.com
