@@ -1,3 +1,0 @@
-$('#send').on('click', function() {
-  
-});

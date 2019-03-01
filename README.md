@@ -67,6 +67,9 @@ Notes( Development):
 
 •	Linux deployment with Nginx, MongoDB, Node.js with SSL certificate.
 
+
+** For code. Email: vidul.verma@outlook.com
+
 Screenshots:
 
 Home Screen
